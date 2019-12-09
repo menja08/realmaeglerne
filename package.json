@@ -1,0 +1,24 @@
+{
+  "name": "realmaeglerne",
+  "version": "1.0.0",
+  "description": "real estate website copy of realmaeglerne.dk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menja08/realmaeglerne.git"
+  },
+  "author": "ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/menja08/realmaeglerne/issues"
+  },
+  "homepage": "https://github.com/menja08/realmaeglerne#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13"
+  }
+}

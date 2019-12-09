@@ -1,0 +1,30 @@
+/**/
+/* logo style*/
+#logo {
+  background: pink; }
+
+/* navigation style */
+nav {
+  background: lightgreen; }
+
+/* search_home style */
+#search_home {
+  background: #003761;
+  color: white; }
+
+/* footer style */
+footer {
+  background: #003761;
+  color: white;
+  display: flex;
+  flex-direction: row; }
+  footer div {
+    width: 30%; }
+  footer p {
+    width: 100%;
+    border: 1px solid yellow; }
+
+body {
+  background-color: lightblue; }
+
+/*# sourceMappingURL=style.css.map */
