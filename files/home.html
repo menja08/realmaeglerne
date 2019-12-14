@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Ejendomsmægler RealMæglerne</title>
@@ -10,13 +10,67 @@
     <div id="logo">the logo goes here</div>
 
     <nav>
-      <div>Login</div>
+      <div>Login
+	<div>
+	  <h3>Log ind</h3>
+	  Med Mit RealMæglerne er det nemt at følge boligmarkedet. Leder du
+	  efter nyt, kan du gemme dine favorit boliger og målrette din søgning
+	  ned til mindste detalje. Skal du sælge, kan du løbende følge
+	  interessen for din bolig og meget mere.
+
+	  <form action="" method="post">
+	    <input type="text" value="Email/brugernavn">
+	    <input value="Password" type="text">
+	    <input type="submit" value="LOG IND">
+	  </form>
+	  Glemt adgangskode? Tilmeldt via mægler?
+	  <button>OPRET BRUGER</button>
+	</div>
+
+	<div>
+	  <h3>Opret profil</h3>
+	  <input type="text" value="Fulde navn">
+	  <input type="text" value="E-mail">
+	  <input type="text" value="Ønsket kodeord">
+	  <input type="text" value="Gentag kodeord">
+	  <input type="checkbox"> Jeg accepterer betingelserne. *
+	  <input type="submit" value="OPRET NY PROFIL">
+	  <button>JEG HAR EN BRUGER</button>
+
+	  * Der samles ingen personlige oplysninger uden dit udtrykkelige samtykke. Ved at klikke på denne checkboks giver du dit samtykke til, at dine data samles og behandles af RB Mægler for at kunne kontakte dig. Du kan til enhver tid tilbagekalde dit samtykke. For at gøre dette skal du blot sende en meddelelse til info@realmaeglerne.dk. Læs mere på privatlivspolitikkerne.
+	</div>
+	
+      </div>
       <div>Søg bolig</div>
-      <div>Menu</div>
+      <div id="menu">Menu
+	<ul>
+	  <li><a href="">MENU</a></li>
+	  <li><a href="">FORSIDE</a></li>
+	  <li><a href="">FIND EJENDOMSMÆGLER</a></li>
+	  <li><a href="">REALMATCH</a></li>
+	  <li><a href="">REALSYN</a></li>
+	  <li><a href="">GULDKØBER</a></li>
+	  <li><a href="">KØBERRÅDGIVNING</a></li>
+	  <li><a href="">PROJEKTSALG</a></li>
+	  <li><a href="">ERHVERV</a></li>
+	  <li><a href="">REALMÆGLERNE</a></li>
+	  <li><a href="">BLIV PARTNER</a></li>
+	</ul>
+
+	<form action="findMaegler" method="post">
+	  <input type="text" value="FIND MÆGLER">
+	</form>
+	<div>GRATIS SALGSVURDERING</div>
+      </div>
     </nav>
 
     <div id="search_home">
-      <div><p>Søg bolig</p></div><div> | 60000 Boliger til salg</div>
+      <div>
+	<p>Søg bolig</p>
+      </div>
+      <div>
+	| 60000 Boliger til salg
+      </div>
 
       <form action="/search" method="post">
 	<input type="text" name="search" value="Postnummer, by, vej eller sagsnummer">
@@ -36,25 +90,66 @@
 	    Energiemærke<input type="" value="Vælg">
 	    <h3>Økonomi</h3>
 	    Ejerudgift/boligydelse pr måned <input type="text" value="Min. DKK"><input type="text" value="Max. DKK">
+	    <input type="submit" value="ANVEND FILTRE">
 	  </div>
 	</div>
       </form>
     </div>
     
-    <div>
-      <div>Min Klimaberegner</div>
-      <div>Sølg din bolig</div>
-      <div>Din lokale ejendomsmægler</div>
-      <div>Find Guldkøber til din bolig</div>
+    <div id="midSection">
+      <div>
+	<h3>Min Klimaberegner</h3>
+	Hvad betyder energiforbedringer af boligen for klimaet og for din
+	økonomi? Bliv klogere med klimaberegneren - som straks viser dig gevinsten ved de forbedringer, du ønsker.
+
+	<h5>Prøv Min Klimaberegner</h5>
+      </div>
+      <div>
+	<h3>Sælg din bolig</h3>
+	<p>BESTIL GRATIS SALGSVURDERING</p>
+	<form action="/search" method="post">
+	  <input type="input" value="FIND EJENDOMSMÆGLER">
+	</form>
+      </div>
+      <div>
+	<h3>Din lokale ejendomsmægler</h3>
+	RealMæglerne er kendt for grundighed, faglighed og stor lokalindsigt. Vi er en uafhængig ejendomsmæglerkæde, grundlagt i 1988, og er siden da etableret i hele Danmark som ejendomsmægleren, der tager hånd om den personlige, professionelle og gedigne bolighandel.
+	<h5>Find din lokale RealMægler her</h5>
+      </div>
+      <div>
+	<h3>Find Guldkøber til din bolig</h3>
+	Søg mellem alle vores Guldkøbere, og find en potentiel køber til netop din bolig.
+	<h5>Søg køber</h5>
+      </div>
     </div>
 
-    <div>Kom godt igang
-      <div>JYSKE BANK</div>
-      <div>Forældrekøb - en attraktiv investering</div>
-      <div>RealMatch</div>
-      <div>Skriv dig op som Guldkøber</div>
-      <div>Hvorfor vælge RealMæglerne</div>
-      <div>Bliv RealMægler</div>
+    <div id="lower_midSection_home">
+      <h2>Kom godt igang</h2>
+      <div>
+	<h3>JYSKE BANK</h3>
+	Hvor meget kan jeg købe bolig for?
+	<h5>Prøv vores låneberegner</h5>
+      </div>
+      <div>
+	<h3>Forældrekøb - en attraktiv investering</h3>
+	<h5>Kom godt i gang</h5>
+      </div>
+      <div>
+	<h3>RealMatch</h3>
+	<h5>Sådan fungerer det</h5>
+      </div>
+      <div>
+	<h3>Skriv dig op som Guldkøber</h3>
+	<h5>Læs mere</h5>
+      </div>
+      <div>
+	<h3>Hvorfor vælge RealMæglerne</h3>
+	<h5>Læs mere</h5>
+      </div>
+      <div>
+	<h3>Bliv RealMægler</h3>
+	<h5>Læs mere</h5>
+      </div>
     </div>
 
     <div>Boliger til salg</div>
@@ -103,5 +198,6 @@
     </footer>
     
     <script src="./js/home.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

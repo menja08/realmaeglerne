@@ -4,6 +4,32 @@
   background: pink; }
 
 /* navigation style */
+/* menu scss */
+#menu {
+  border: 1px solid yellow;
+  width: 30%;
+  float: right; }
+  #menu ul {
+    list-style-type: none; }
+    #menu ul li {
+      border-bottom: 1px solid grey;
+      margin-bottom: 2%;
+      padding-bottom: 2%; }
+    #menu ul a {
+      text-decoration: none; }
+  #menu form {
+    margin-left: 7%;
+    color: #003761; }
+    #menu form input {
+      padding: 0.75em;
+      width: 70%; }
+  #menu div {
+    margin-left: 7%;
+    background-color: #66C1BF;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 0.75em; }
+
 nav {
   background: lightgreen; }
 
@@ -11,6 +37,19 @@ nav {
 #search_home {
   background: #003761;
   color: white; }
+
+#midSection {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap; }
+  #midSection div {
+    width: 50%;
+    border: 1px solid green; }
+
+#lower_midSection_home {
+  width: 80%;
+  margin: auto; }
 
 /* footer style */
 footer {

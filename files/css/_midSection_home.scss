@@ -1,0 +1,10 @@
+#midSection {
+    display : flex;
+    width : 80%;
+    margin : auto;
+    flex-wrap : wrap;
+    div {
+	width : 50%;
+	border : 1px solid green;
+    }
+}
