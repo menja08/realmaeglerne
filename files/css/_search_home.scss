@@ -3,4 +3,27 @@
 #search_home {
     background : #003761;
     color : white;
+    display : flex;
+    flex-wrap : wrap;
+
+    #first, #second {
+	width : 50%;
+	//flex-wrap : nowrap;
+    }
+
+    #first {
+	//flex-wrap : nowrap;
+    }
+
+    form {
+	// display : block;
+	input {
+	    color : grey;
+	    height : 15%;
+	    width : 20%;
+	    flex-wrap : wrap;
+	    text-align : center;
+	}
+    }
+ 
 }

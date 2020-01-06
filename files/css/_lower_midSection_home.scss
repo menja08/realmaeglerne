@@ -1,5 +1,16 @@
 #lower_midSection_home {
     width : 80%;
     margin : auto;
-    div {}
+    display : flex;
+    flex-wrap : wrap;
+
+    h2 {
+	width : 100%;
+	color : #345670;
+	text-align : center;
+    }
+    div {
+	width : 40%;
+	border : 1px solid yellow;
+    }
 }

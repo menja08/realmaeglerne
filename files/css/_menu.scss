@@ -1,8 +1,12 @@
 /* menu scss */
 #menu {
     border : 1px solid yellow;
-    width : 30%;
-    float : right;
+    width : 33%;
+    //float : right;
+
+    ul, form, div  {
+	display : none;
+    }
 
     ul {
 	list-style-type : none;

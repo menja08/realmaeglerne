@@ -7,8 +7,9 @@
 /* menu scss */
 #menu {
   border: 1px solid yellow;
-  width: 30%;
-  float: right; }
+  width: 33%; }
+  #menu ul, #menu form, #menu div {
+    display: none; }
   #menu ul {
     list-style-type: none; }
     #menu ul li {
@@ -30,13 +31,44 @@
     color: #FFFFFF;
     padding: 0.75em; }
 
+/* login */
+#login {
+  width: 33%;
+  border: 1px solid red; }
+  #login div {
+    display: none; }
+
+/* search_nav */
+#search_nav {
+  width: 33%;
+  border: 1px solid blue; }
+
 nav {
-  background: lightgreen; }
+  background: lightgreen;
+  width: 30%;
+  float: right;
+  display: flex; }
+  nav div:nth-child(1):hover, nav div:nth-child(2):hover {
+    background: #003761;
+    color: white; }
+  nav div:nth-child(3):hover {
+    background: #66C1BF;
+    color: white; }
 
 /* search_home style */
 #search_home {
   background: #003761;
-  color: white; }
+  color: white;
+  display: flex;
+  flex-wrap: wrap; }
+  #search_home #first, #search_home #second {
+    width: 50%; }
+  #search_home form input {
+    color: grey;
+    height: 15%;
+    width: 20%;
+    flex-wrap: wrap;
+    text-align: center; }
 
 #midSection {
   display: flex;
@@ -44,19 +76,29 @@ nav {
   margin: auto;
   flex-wrap: wrap; }
   #midSection div {
-    width: 50%;
+    width: 40%;
+    margin: 1%;
     border: 1px solid green; }
 
 #lower_midSection_home {
   width: 80%;
-  margin: auto; }
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap; }
+  #lower_midSection_home h2 {
+    width: 100%;
+    color: #345670;
+    text-align: center; }
+  #lower_midSection_home div {
+    width: 40%;
+    border: 1px solid yellow; }
 
 /* footer style */
 footer {
   background: #003761;
   color: white;
   display: flex;
-  flex-direction: row; }
+  flex-wrap: wrap; }
   footer div {
     width: 30%; }
   footer p {

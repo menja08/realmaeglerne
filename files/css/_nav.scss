@@ -1,7 +1,22 @@
 /* navigation style */
 
 @import "menu";
+@import "login";
+@import "search_nav";
 
 nav {
     background : lightgreen;
+    width : 30%;
+    float : right;
+    display : flex;
+
+    div:nth-child(1):hover, div:nth-child(2):hover {
+	background : #003761;
+	color : white;
+    }
+
+    div:nth-child(3):hover {
+	background : #66C1BF;
+	color : white;
+    }
 }
