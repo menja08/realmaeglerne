@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ejendomsmaegler RealMaeglerne</title>
+    <meta chaarset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body>
+    <p>Create New Bolig</p>
+    <form action="/create" method="post">
+      <p>Billeder</p>
+      Billed 1: <input type="text" name="billed1"><br>
+      Billed 2: <input type="text" name="billed2"><br>
+      Billed 3: <input type="text" name="billed3">
+      <p>Basics</p>
+      Adresse:
+      vej: <input type="text" name="vej"><br>
+      postnummer: <input type="number" name="postnummer"><br>
+      by: <input type="text" name="by"><br>
+      Sagsnummer: <input type="number" name="sagsnummer"><br>
+      Boligtype: <input type="text" name="boligtype"><br>
+      Boligareal: <input type="number" name="boligareal"><br>
+      Grundareal: <input type="number" name="grundareal"><br>
+      Bygget/ombygget: <input type="number" name="bygget"><br>
+      Antal rum: <input type="number" name="antalrum"><br>
+      Etager: <input type="number" name="etager"><br>
+      Energimaerke: <input type="text" name="enrgimaerke">
+      
+      <p>Pris</p>
+      Kontantpris: <input type="number" name="kontantpris"><br>
+      Udbetaling: <input type="number" name="udbetaling"><br>
+      Brutto: <input type="number" name="brutto"><br>
+      Netto: <input type="number" name="netto"><br>
+      Ejerudgift: <input type="number" name="ejerudgift">
+      
+      <p>Kontakt Person</p>
+      Billed: <input type="text" name="billedperson"><br>
+      Fornavn: <input type="text" name="fornavn"><br>
+      Efternavn: <input type="text" name="efternavn"><br>
+      Email: <input type="text" name="emailperson"><br>
+      Telefon: <input type="number" name="telefonperson"><br>
+      RealMaeglerne Afdeling: <input type="text" name="afdeling"><br>
+      Adresse:<br>
+      Vejnavn: <input type="text" name="vejnavn"><br>
+      Postnummer: <input type="number" name="postnummerafdeling"><br>
+      By: <input type="text" name="byafdeling"><br>
+      Email: <input type="text" name="emailafdeling"><br>
+      Telefon: <input type="number" name="telefonafdeling"><br>
+
+      <p>Other description text</p>
+
+      Simple:<br> <textarea rows="5" columns="35" name="simple"></textarea><br>
+      Detailed:<br> <textarea rows="5" columns="35" name="detailed"></textarea><br>
+      <input type="submit" value="Submit">
+      
+      
+    </form>
+  </body>
+</html>
