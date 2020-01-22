@@ -33,6 +33,19 @@ app.use("/create", (req, res) => {
     });
 });
 
+// read (CRUD)
+app.use("/showAllHouses", (req, res) => {
+    House.find((err, house) => {
+	if (err) {
+	    res.type().status(500);
+	    res.send("Error " + err);
+	} else {
+	    console.log(house);
+	    res.json(house);
+	}
+    });
+});
+
 app.listen(3000, () => {
     console.log("Listening on port 3000");
 });
