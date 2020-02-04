@@ -77,24 +77,134 @@
       </div>
 
       <form action="/search" method="post">
-	<input type="text" name="search" value="Postnummer, by, vej eller sagsnummer">
-	<input type="" value="Boligtype">
-	<input type="" value="Pris">
-	<input type="submit" value="SØG">
 	<div>
+	  <input type="text" name="search" value="Postnummer, by, vej eller sagsnummer"></div>
+	<div id="boligdropdown">
+	  <button type="button" id="firstButton">Boligtype</button>
+	  <div id="boligtype">
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="villa">Villa
+	      </label>
+	    </div>
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="raekkehus">Rækkehus
+	      </label>
+	    </div>
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="villalejlighed">Villalejlighed
+	      </label>
+	    </div>
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="andelsbolig">Andelsbolig
+	      </label>
+	    </div>
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="blandet">Blandet Bolig/Erhverv
+	      </label>
+	    </div>
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="fritidsbolig">Fritidsbolig
+	      </label>
+	    </div>
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="ejerlejlighed">Ejerlejlighed
+	      </label>
+	    </div>
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="helaarsgrund">Helårsgrund
+	      </label>
+	    </div>
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="fritidsgrund">Fritidsgrund
+	      </label>
+	    </div>
+	    <div>
+	      <label>
+		<input type="checkbox" name="propertytype" value="landejendom">Landejendom
+	      </label>
+	    </div>
+	    <hr>
+	    <div>
+	      <button>ANVEND</button>
+	    </div>
+	  </div>
+	</div>
+	<div id="prisdropdown">
+	  <button type="button">Pris</button>
+	  <div id="pris">
+	    <div><label><input type="number"></label></div>
+	    <div><label><input type="number"></label></div>
+	  </div>
+	</div>
+	<div>
+	  <input type="submit" value="SØG">
+	</div>
+	<div id="flere">
 	  <div>Flere søgemuligheder</div>
 	  <div>0 filtre anvendt</div>
 	  <div>Nulstil valg</div>
-	  <div>Forældrekøbsegnet</div>
+	  <div><input type="checkbox">Forældrekøbsegnet</div>
 
-	  <div><h3>Bolig</h3>
-	    Boligareal<input type="text" value="Min. m2"><input type="text" value="Max. m2">
-	    Grundareal<input type="text" value="Min. m2"><input type="text" value="Max. m2">
-	    Antal rum <input type="" value="Min"><input type="" value="Max">
-	    Energiemærke<input type="" value="Vælg">
+	  <div id="bolig">
+	    <h3>Bolig</h3>
+	    <div>
+	      <div>Boligareal</div>
+	      <input type="text" value="Min. m2"><input type="text" value="Max. m2">
+	    </div>
+	    <div>
+	      <div>Grundareal</div>
+	      <input type="text" value="Min. m2"><input type="text" value="Max. m2">
+	    </div>
+	    <div>
+	      <div>Antal rum</div>
+	      <select>
+		<option value="">Min</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="fiveplus">5+</option>
+	      </select>
+
+	      <select>
+		<option value="">Max</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="fiveplus">5+</option>
+	      </select>
+	    </div>
+	    <div>
+	      <div>Energiemærke</div>
+	      <select name="energi">
+		<option value="">Vælg</option>
+		<option value="g">G</option>
+		<option value="f">F</option>
+		<option value="e">E</option>
+		<option value="d">D</option>
+		<option value="c">C</option>
+		<option value="b">B</option>
+		<option value="a">A</option>
+		<option value="a2010">A2010</option>
+		<option value="a2015">A2015</option>
+		<option value="a2020plus">A2020+</option>
+	      </select>
+	    </div>
 	    <h3>Økonomi</h3>
-	    Ejerudgift/boligydelse pr måned <input type="text" value="Min. DKK"><input type="text" value="Max. DKK">
-	    <input type="submit" value="ANVEND FILTRE">
+	    <div>
+	      <div>Ejerudgift/boligydelse pr måned</div>
+	      <input type="text" value="Min. DKK"><input type="text" value="Max. DKK"></div>
+	    <div><input type="submit" value="ANVEND FILTRE"></div>
 	  </div>
 	</div>
       </form>
