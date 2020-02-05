@@ -18,19 +18,43 @@ var House = require("./files/js/House.js");
 app.use("/create", (req, res) => {
     console.log("Inside create");
     console.log(req.body);
-    var newHouse = new House(req.body);
-    newHouse.save((err, house) => { // house is a json object
-	console.log("saved1");
-	if (err) {
-	    console.log("error!");
-	    console.log(err);
-	    res.json({});
+
+    if (req.body.sagsnummer === undefined) {
+	res.send("Error !, undefined, No sagsnummer included!");
+    } else {
+	var newHouse = new House(req.body);
+
+	// if the request body is empty {}
+	var houseToBeSaved = Object.values(req.body);
+
+	// check inputs before saving
+	if ((houseToBeSaved.includes("")) || (houseToBeSaved.includes(null))  || (houseToBeSaved.includes(undefined))) {
+	    res.send("the request included either an empty string or null or undefined!");
+	    
 	} else {
-	    console.log("saved2");
-	    //res.redirect("/files/home.html");
-	    res.json(house);
+	    // read from database to avoid duplicates
+	    House.find({sagsnummer : req.body.sagsnummer}, (err, house) => {
+		if (err) {
+		    console.log(err);
+		    res.type().status(500);
+		    res.send("Err " + err);
+		} else if (house.length === 0) {// house not in database
+		    newHouse.save((err, house) => {
+			if (err) {
+			    console.log(err);
+			    res.json({});
+			} else {
+			    // saved successfully
+			    res.send("Saved successfully!");
+			}
+		    });
+		} else {
+		    res.send("that sagsnummer is already in the database");
+		}
+	    });
 	}
-    });
+    }
+    
 });
 
 // read (CRUD)
