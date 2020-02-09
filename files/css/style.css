@@ -214,6 +214,43 @@ nav {
     width: 40%;
     border: 1px solid yellow; }
 
+#boliger {
+  width: 99%;
+  border: 1px solid black;
+  margin: auto; }
+  #boliger #allHouses {
+    width: 20%; }
+    #boliger #allHouses div {
+      width: 100%; }
+      #boliger #allHouses div img {
+        width: 100%; }
+      #boliger #allHouses div div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; }
+        #boliger #allHouses div div div:nth-child(1) {
+          width: 70%; }
+        #boliger #allHouses div div div:nth-child(2) {
+          width: 25%;
+          padding-left: 2%; }
+        #boliger #allHouses div div div:nth-child(3) {
+          width: 20%; }
+        #boliger #allHouses div div div:nth-child(4) {
+          width: 70%; }
+        #boliger #allHouses div div div:nth-child(5) {
+          width: 100%; }
+        #boliger #allHouses div div hr {
+          width: 100%; }
+        #boliger #allHouses div div div:nth-child(7) {
+          width: 20%; }
+        #boliger #allHouses div div div:nth-child(8) {
+          width: 20%; }
+        #boliger #allHouses div div div:nth-child(9) {
+          width: 50%;
+          color: green;
+          margin-right: 0%;
+          padding-left: 5%; }
+
 /* footer style */
 footer {
   background: #003761;
