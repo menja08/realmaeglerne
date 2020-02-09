@@ -64,11 +64,31 @@ app.use("/showAllHouses", (req, res) => {
 	    res.type().status(500);
 	    res.send("Error " + err);
 	} else {
-	    console.log(house);
+	    //console.log(house);
 	    res.json(house);
 	}
     });
 });
+
+// details of a specific house
+app.use("/imageId/:imageName", (req, res) => {
+    console.log("req.params = " + req.params);
+    console.log("req.params.imageName = " + req.params.imageName);
+    House.find({billed1:req.params.imageName}, (err, house) => {
+	if (err) {
+	    res.type().status(500);
+	    res.send("Error " + err);
+	} else {
+	    res.json(house);
+	    // use res.render
+	}
+    });
+    //res.json(req.params.imageName);
+    });
+
+/*app.use("/specificHouse.html/:imageName", (req, res) => {
+    res.json(req.params.imageName);
+});*/
 
 app.listen(3000, () => {
     console.log("Listening on port 3000");

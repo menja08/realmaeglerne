@@ -26,7 +26,8 @@ function addHouse(houses, allHouses) {
 	// image anchor tag
 	var anchorTag = document.createElement("a");
 	anchorTag.append(image);
-	anchorTag.href = "/" + imageName; // correct this link, GET
+	anchorTag.href = "/imageId/" + imageName; // correct this link, GET
+	// anchorTag.href = "/files/specificHouse.html";// + imageName;
 	boxDiv.append(anchorTag);
 	//boxDiv.append(image);
 
