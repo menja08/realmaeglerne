@@ -268,11 +268,17 @@ footer {
 #specificHouse .icon {
   width: 100%; }
 #specificHouse #imageSlider #backArrow {
-  width: 5%; }
+  width: 5%;
+  position: absolute;
+  top: 50%;
+  left: 0; }
 #specificHouse #imageSlider #nextArrow {
-  width: 5%; }
+  width: 5%;
+  position: absolute;
+  top: 50%;
+  left: 95%; }
 #specificHouse #imageSlider #house {
-  width: 90%; }
+  width: 100%; }
   #specificHouse #imageSlider #house img {
     width: 100%;
     height: auto; }

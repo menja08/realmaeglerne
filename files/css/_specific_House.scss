@@ -12,14 +12,21 @@
 
 	#backArrow {
 	    width : 5%;
+	    position : absolute;
+	    top : 50%;
+	    left : 0;
+	    // z-index : -1;
 	}
 
 	#nextArrow {
 	    width : 5%;
+	    position : absolute;
+	    top : 50%;
+	    left : 95%;
 	}
 
 	#house {
-	    width : 90%;
+	    width : 100%;
 
 	    img {
 		width : 100%;
