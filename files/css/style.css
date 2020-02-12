@@ -263,6 +263,66 @@ footer {
     width: 100%;
     border: 1px solid yellow; }
 
+#specificHouse div {
+  color: green; }
+#specificHouse .icon {
+  width: 100%; }
+#specificHouse #imageSlider #backArrow {
+  width: 5%; }
+#specificHouse #imageSlider #nextArrow {
+  width: 5%; }
+#specificHouse #imageSlider #house {
+  width: 90%; }
+  #specificHouse #imageSlider #house img {
+    width: 100%;
+    height: auto; }
+#specificHouse #index0 {
+  width: 100%;
+  display: flex; }
+  #specificHouse #index0 #index1 {
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap; }
+    #specificHouse #index0 #index1 div {
+      width: 50%; }
+    #specificHouse #index0 #index1 div:nth-child(even) {
+      color: red;
+      text-align: right; }
+  #specificHouse #index0 #index2 {
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap; }
+    #specificHouse #index0 #index2 hr {
+      background-color: orange;
+      width: 100%; }
+    #specificHouse #index0 #index2 div {
+      width: 48%; }
+    #specificHouse #index0 #index2 div:nth-child(odd) {
+      color: blue;
+      text-align: right; }
+    #specificHouse #index0 #index2 div:nth-child(12) {
+      width: 100%;
+      color: green; }
+    #specificHouse #index0 #index2 div:nth-child(13) {
+      width: 100%;
+      text-align: left; }
+    #specificHouse #index0 #index2 div:nth-child(14) {
+      width: 100%;
+      text-align: center; }
+    #specificHouse #index0 #index2 div:nth-child(15) {
+      width: 100%;
+      text-align: center; }
+  #specificHouse #index0 #index3 {
+    display: flex;
+    flex-wrap: wrap; }
+    #specificHouse #index0 #index3 div:nth-child(1) {
+      width: 100%; }
+    #specificHouse #index0 #index3 hr {
+      width: 100%; }
+    #specificHouse #index0 #index3 img {
+      width: 20%;
+      padding: 4%; }
+
 body {
   background-color: lightblue; }
 

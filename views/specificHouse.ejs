@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <title>SPECIFIC HOUSE</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../files/css/style.css">
+    </head>
+<body id="specificHouse">
+    <!--<div>houseName is <%= billed1 %></div>
+    <div><img src="../files/images/<%= billed1 %>"></div>-->
+
+    <div id="imageSlider">
+        <div id="backArrow">
+	    <img class="icon" src="../files/images/icons/002-back.png">
+	</div>
+
+        <div id="house">
+	  <img src="../files/images/<%= billed1 %>">
+	  <img src="../files/images/<%= billed2 %>">
+	  <img src="../files/images/<%= billed3 %>">
+	</div>
+
+        <div id="nextArrow">
+	    <img class="icon" src="../files/images/icons/001-next.png">
+	</div>
+    </div>
+
+    <div id="index0">
+        <div id="index1">
+	    <div>Sagsnummer</div><div><%=sagsnummer%></div>
+	    <div>Boligtype</div><div><%=boligtype%></div>
+	    <div>Bolig areal</div><div><%=boligareal%></div>
+	    <div>Grund areal</div><div><%=grundareal%></div>
+	    <div>Bygget/Ombygget</div><div><%=bygget%></div>
+	    <div>Antal rum</div><div><%=antalrum%></div>
+	    <div>Etager</div><div><%=etager%></div>
+	    <div>Energimærke</div><div><%=energimaerke%></div>
+	</div>
+
+        <div id="index2">
+	    <div>Kontantpris</div><div>kr. <%=kontantpris%></div>
+	    <hr>
+	    <div>Udbetaling</div><div><%=udbetaling%></div>
+	    <div>Brutto</div><div><%=brutto%></div>
+	    <div>Netto</div><div><%=netto%></div>
+	    <div>Ejerudgift</div><div><%=ejerudgift%></div>
+	    <div>Brutto og Netto er eksklusiv ejerudgift</div>
+	    <div>Tjek boliglån</div>
+	    <div>KOM TIL FREMVISNING</div>
+	    <div>HENT SALGSOPSTILLING</div>
+	</div>
+
+        <div id="index3">
+	    <div>Kontakt</div>
+	    <hr>
+	    <img src="../files/images/<%=billed1%>">
+	    <div>
+	        <div><%=fornavn%><%=efternavn%></div>
+		<div>Mail : <%=emailperson%></div>
+		<div>Tlf. : <%=telefonperson%></div>
+		<div><%=afdeling%></div>
+		<div><%=vejnavn%></div>
+		<div><%=postnummerafdeling%><%=byafdeling%></div>
+		<div>Mail : <%=emailafdeling%></div>
+		<div>Tlf. : <%=telefonafdeling%></div>
+	    </div>
+	</div>
+    </div>
+
+    <hr>
+    <div><%=simple%></div>
+    <div><%=detailed%></div>
+
+    <script src="../files/js/specificHouse.js"></script>
+</body>
+</html>
