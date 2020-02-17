@@ -158,10 +158,13 @@ app.use("/search", (req, res) => {
 	}
 	
 	if (searchInput.isPostNumber(req.body.search)) {
-	    query.postnummer = req.body.search;
+	    query.postnummer = Number.parseInt(req.body.search);
 	    console.log("query = " + query);
 
-	    House.find({postnummer: req.body.search}, (err, houses) => {
+	    // {postnummer: req.body.search}
+	    // before doing the search, are other key/value pairs available?
+	    // if key/value is true, add to query
+	    House.find(query, (err, houses) => {
 		if (err) {
 		    console.log("Err " + err);
 		} else {
@@ -170,9 +173,29 @@ app.use("/search", (req, res) => {
 		}
 	    });
 	    // sagsnummer
+	} else if (searchInput.isSagsnummer(req.body.search)) {
+	    query.sagsnummer = Number.parseInt(req.body.search);
+
+	    // add other properties to query if available
+	    House.find(query, (err, houses) => {
+		if (err) {
+		    console.log("Err " + err);
+		} else {
+		    res.json(houses);
+		}
+	    });
 	} else {
-	    res.json({});///////////////////////
-	} // else if by or vej
+	    // assume req.body.search is either "by" or "vej"
+	    query.by = req.body.search;
+	    House.find(query, (err, houses) => {
+		if (err) {
+		    console.log("Err " + err);
+		} else {
+		    res.json(houses);
+		}///////////
+	    });
+	    //res.json({});
+	}
     }
 });
 

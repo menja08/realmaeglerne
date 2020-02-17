@@ -16,3 +16,16 @@ exports.isPostNumber = function (inputValue) {
 	}
     }
 }
+
+exports.isSagsnummer = function (inputValue) {
+
+    // regex test
+    myRegex = (/^[0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/).test(inputValue);
+
+    if (myRegex) {
+
+	// convert string to int
+	// var inputValueInt = Number.parseInt(inputValue);
+	return true;
+    }
+}
