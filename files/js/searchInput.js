@@ -3,15 +3,16 @@
 
 exports.isPostNumber = function (inputValue) {
 
-    var isNumber = Number.isInteger(inputValue);
+    // regex test
+    myRegex = (/^[0-9][0-9][0-9][0-9]$/).test(inputValue);
 
-    if (isNumber) {
-	if (1000 <= inputValue && inputValue <= 9999) {
+    if (myRegex) {
+
+	// convert string to int
+	var inputValueInt = Number.parseInt(inputValue);
+
+	if (1000 <= inputValueInt && inputValueInt <= 9999) {
 	    return true;
-	} else {
-	    return false;
 	}
-    } else {
-	return false;
     }
 }

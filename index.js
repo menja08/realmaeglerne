@@ -145,9 +145,8 @@ app.use("/search", (req, res) => {
 		res.json(houses);
 	    }
 	});
-    } 
-    // is req.body.name a "postnummer", "by", "vej" or "sagsnummmer"
-    else {
+    } else {
+	// is req.body.search a "postnummer", "by", "vej" or "sagsnummer"
 
 	console.log("req.body.search2 = " + req.body.search);
 	console.log("typeOf req.body.search = " + typeof req.body.search);
@@ -170,9 +169,10 @@ app.use("/search", (req, res) => {
 		    res.json(houses);
 		}
 	    });
+	    // sagsnummer
 	} else {
 	    res.json({});///////////////////////
-	}
+	} // else if by or vej
     }
 });
 
