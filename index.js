@@ -66,7 +66,7 @@ app.use("/showAllHouses", (req, res) => {
 	    res.type().status(500);
 	    res.send("Error " + err);
 	} else {
-	    console.log(house);
+	    //console.log(house);
 	    res.json(house);
 	}
     });
@@ -122,7 +122,59 @@ app.use("/imageId/:imageName", (req, res) => {
 
 /*app.use("/specificHouse.html/:imageName", (req, res) => {
     res.json(req.params.imageName);
-});*/
+    });*/
+
+var searchInput = require("./files/js/searchInput.js");
+app.use("/search", (req, res) => {
+    var query = {};
+    console.log("req.body.search1 = " + req.body.search);
+    
+    /*var name = req.body.name;
+    if (req.body.name) {
+	// guard against wrong input, eg email
+	query.name = req.body.name;
+    }
+    console.log(query);*/
+
+    // case 1: empty input field
+    if (req.body.search === undefined) {
+	House.find((err, houses) => {
+	    if (err) {
+		console.log("Error " + err);
+	    } else {
+		res.json(houses);
+	    }
+	});
+    } 
+    // is req.body.name a "postnummer", "by", "vej" or "sagsnummmer"
+    else {
+
+	console.log("req.body.search2 = " + req.body.search);
+	console.log("typeOf req.body.search = " + typeof req.body.search);
+
+	// check for illegal input
+	if ((/[^æøåa-z0-9]/i).test(req.body.search)) {
+	    res.send("Illegal input");
+	    res.end();
+	}
+	
+	if (searchInput.isPostNumber(req.body.search)) {
+	    query.postnummer = req.body.search;
+	    console.log("query = " + query);
+
+	    House.find({postnummer: req.body.search}, (err, houses) => {
+		if (err) {
+		    console.log("Err " + err);
+		} else {
+		    //console.log("houses = " + houses);
+		    res.json(houses);
+		}
+	    });
+	} else {
+	    res.json({});///////////////////////
+	}
+    }
+});
 
 app.listen(3000, () => {
     console.log("Listening on port 3000");
