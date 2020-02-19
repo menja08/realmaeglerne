@@ -120,21 +120,11 @@ app.use("/imageId/:imageName", (req, res) => {
     //res.json(req.params.imageName);
     });
 
-/*app.use("/specificHouse.html/:imageName", (req, res) => {
-    res.json(req.params.imageName);
-    });*/
-
 var searchInput = require("./files/js/searchInput.js");
 app.use("/search", (req, res) => {
     var query = {};
+    console.log("query = " + query);
     console.log("req.body.search1 = " + req.body.search);
-    
-    /*var name = req.body.name;
-    if (req.body.name) {
-	// guard against wrong input, eg email
-	query.name = req.body.name;
-    }
-    console.log(query);*/
 
     // case 1: empty input field
     if (req.body.search === undefined) {
@@ -148,18 +138,18 @@ app.use("/search", (req, res) => {
     } else {
 	// is req.body.search a "postnummer", "by", "vej" or "sagsnummer"
 
-	console.log("req.body.search2 = " + req.body.search);
-	console.log("typeOf req.body.search = " + typeof req.body.search);
+	// console.log("req.body.search2 = " + req.body.search);
+	// console.log("typeOf req.body.search = " + typeof req.body.search);
 
 	// check for illegal input
-	if ((/[^æøåa-z0-9]/i).test(req.body.search)) {
+	if ((/[^æøåa-z0-9\s]/i).test(req.body.search)) {
 	    res.send("Illegal input");
 	    res.end();
 	}
 	
 	if (searchInput.isPostNumber(req.body.search)) {
 	    query.postnummer = Number.parseInt(req.body.search);
-	    console.log("query = " + query);
+	    console.log("query.postnummer key/values = " + Object.entries(query));
 
 	    // {postnummer: req.body.search}
 	    // before doing the search, are other key/value pairs available?
@@ -175,23 +165,48 @@ app.use("/search", (req, res) => {
 	    // sagsnummer
 	} else if (searchInput.isSagsnummer(req.body.search)) {
 	    query.sagsnummer = Number.parseInt(req.body.search);
+	    console.log("query.sagsnummer key/values = " + Object.entries(query));
 
 	    // add other properties to query if available
 	    House.find(query, (err, houses) => {
 		if (err) {
 		    console.log("Err " + err);
 		} else {
+		    // if (houses.length > 0) {}
 		    res.json(houses);
 		}
 	    });
 	} else {
 	    // assume req.body.search is either "by" or "vej"
 	    query.by = req.body.search;
-	    House.find(query, (err, houses) => {
+	    console.log("query.by key/values = " + Object.entries(query));
+	    // find out why House.find(query); doesn't work
+	    // {by: "Aalborg SØ"}/ {by:req.body.search}
+	    House.find({by:/aalborg sø/i}, (err, houses) => {////
 		if (err) {
 		    console.log("Err " + err);
 		} else {
-		    res.json(houses);
+		    // before res.json(), check if houses is empty or undefined
+		    if (houses.length > 0) {
+			res.json(houses);
+		    } else {
+			// either "by" does not exist or input value is "vej"
+			delete query.by;
+			query.vej = req.body.search;
+			House.find({vej:req.body.search}, (err, houses) => {
+			    if (err) {
+				console.log("Err: " + err);
+			    } else {
+				if (houses.length > 0) {
+				    res.json(houses);//???????
+				} else {
+				    res.send("There is no house with the information " + req.body.search);
+				    res.end();
+				}
+			    }
+			});
+			
+		    }
 		}///////////
 	    });
 	    //res.json({});
