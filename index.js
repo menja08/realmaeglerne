@@ -124,7 +124,7 @@ var searchInput = require("./files/js/searchInput.js");
 app.use("/search", (req, res) => {
     var query = {};
     console.log("query = " + query);
-    console.log("req.body.search1 = " + req.body.search);
+    console.log("req.body = " + Object.entries(req.body));
 
     // case 1: empty input field
     if (req.body.search === undefined) {
@@ -181,19 +181,26 @@ app.use("/search", (req, res) => {
 	    query.by = req.body.search;
 	    console.log("query.by key/values = " + Object.entries(query));
 	    // find out why House.find(query); doesn't work
-	    // {by: "Aalborg SØ"}/ {by:req.body.search}
-	    House.find({by:/aalborg sø/i}, (err, houses) => {////
+	    // {by: "Aalborg SØ"}/ {by:req.body.search} {by:/aalborg sø/i}
+	    // var value = req.body.search;
+	    // use {collation} and $regex
+	    House.find(query, (err, houses) => {////
 		if (err) {
 		    console.log("Err " + err);
 		} else {
 		    // before res.json(), check if houses is empty or undefined
+		    // console.log("houses = " + houses[0]);
+		    console.log("houses.length = " + houses.length);
 		    if (houses.length > 0) {
 			res.json(houses);
 		    } else {
 			// either "by" does not exist or input value is "vej"
+			console.log("query before delete = " + Object.entries(query));
 			delete query.by;
+			console.log("query after delete = " + Object.entries(query));
 			query.vej = req.body.search;
-			House.find({vej:req.body.search}, (err, houses) => {
+			console.log("query.vej = " + Object.entries(query));
+			House.find(query, (err, houses) => {
 			    if (err) {
 				console.log("Err: " + err);
 			    } else {

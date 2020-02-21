@@ -1,6 +1,6 @@
 // defines schema and model slide 512
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/realmaeglerne", {useNewUrlParser:true});// { useUnifiedTopology: true });
+mongoose.connect("mongodb://localhost:27017/realmaeglerne", {useNewUrlParser:true, useUnifiedTopology: true });
 
 var Schema = mongoose.Schema;
 
@@ -37,10 +37,6 @@ var houseSchema = new Schema({
     telefonafdeling:String,
     simple:String,
     detailed:String
-});
+}, {collation : {locale : "en", strength : 1}});
 
 module.exports = mongoose.model("House", houseSchema);
-/**
-simple:String,
-    detailed:String
-*/

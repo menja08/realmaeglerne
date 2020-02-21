@@ -158,15 +158,15 @@
 	    <h3>Bolig</h3>
 	    <div>
 	      <div>Boligareal</div>
-	      <input type="text" value="Min. m2"><input type="text" value="Max. m2">
+	      <input type="text" name="minBolig" value="Min. m2"><input type="text" name="maxBolig" value="Max. m2">
 	    </div>
 	    <div>
 	      <div>Grundareal</div>
-	      <input type="text" value="Min. m2"><input type="text" value="Max. m2">
+	      <input type="text" name="minGrund" value="Min. m2"><input type="text" name="maxGrund" value="Max. m2">
 	    </div>
 	    <div>
 	      <div>Antal rum</div>
-	      <select>
+	      <select name="minNumber">
 		<option value="">Min</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
@@ -175,7 +175,7 @@
 		<option value="fiveplus">5+</option>
 	      </select>
 
-	      <select>
+	      <select name="maxNumber">
 		<option value="">Max</option>
 		<option value="1">1</option>
 		<option value="2">2</option>
@@ -203,7 +203,7 @@
 	    <h3>Økonomi</h3>
 	    <div>
 	      <div>Ejerudgift/boligydelse pr måned</div>
-	      <input type="text" value="Min. DKK"><input type="text" value="Max. DKK"></div>
+	      <input type="text" name="minUdgift" value="Min. DKK"><input type="text" name="maxUdgift" value="Max. DKK"></div>
 	    <div><input type="submit" value="ANVEND FILTRE"></div>
 	  </div>
 	</div>
