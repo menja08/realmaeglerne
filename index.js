@@ -13,6 +13,11 @@ app.use("/home", (req, res) => {
     console.log("Inside home");
     res.redirect("/files/home.html");
 });
+/*app.use("/", (req, res) => {
+    res.redirect("/files/home.html");
+});
+
+app.use("/", express.static("/files/"));*/
 
 var House = require("./files/js/House.js");
 
@@ -154,6 +159,61 @@ app.use("/search", (req, res) => {
 	    // {postnummer: req.body.search}
 	    // before doing the search, are other key/value pairs available?
 	    // if key/value is true, add to query
+
+	    if (req.body.energimaerke) {
+		query.energimaerke = req.body.energimaerke;
+	    }
+
+	    console.log("added energimaerke to query = " + Object.entries(query));
+
+	    // rums
+	    if (req.body.minNumber && req.body.maxNumber) {
+		query.antalrum = {
+		    $gte : req.body.minNumber,
+		    $lte : req.body.maxNumber
+				 }
+	    }
+
+	    // grundareal
+	    if (req.body.minGrund && req.body.maxGrund) {
+		query.grundareal = {
+		    $gte : req.body.minGrund,
+		    $lte : req.body.maxGrund
+		}
+	    }
+
+	    // boligareal
+	    if (req.body.minBolig && req.body.maxBolig) {
+		query.boligareal = {
+		    $gte : req.body.minBolig,
+		    $lte : req.body.maxBolig
+		}
+	    }
+
+	    // ejerudgift
+	    if (req.body.minUdgift && req.body.maxUdgift) {
+		query.ejerudgift = {
+		    $gte : req.body.minUdgift,
+		    $lte : req.body.maxUdgift
+		}
+	    }
+
+	    // pris
+	    if (req.body.minPris && req.body.maxPris) {
+		query.kontantpris = {
+		    $gte : req.body.minPris,
+		    $lte : req.body.maxPris
+		}
+	    }
+
+	    // boligtyptype array
+	    if (req.body.propertytype) {
+		console.log("req.body.propertytype = " + req.body.propertytype);
+		query.boligtype = {
+		    $in : req.body.propertytype//[].concat(req.body.propertytype)
+		}
+	    }
+	    
 	    House.find(query, (err, houses) => {
 		if (err) {
 		    console.log("Err " + err);
