@@ -221,12 +221,16 @@ nav {
     color: #345670;
     text-align: center; }
   #lower_midSection_home div {
-    width: 40%;
+    width: 43%;
     border: 1px solid yellow; }
   #lower_midSection_home div:nth-child(2) {
-    width: 25%; }
+    width: 28%; }
   #lower_midSection_home div:nth-child(3) {
-    width: 25%; }
+    width: 28%; }
+  #lower_midSection_home div:nth-child(6) {
+    width: 28%; }
+  #lower_midSection_home div:nth-child(7) {
+    width: 28%; }
 
 #boliger {
   width: 99%;

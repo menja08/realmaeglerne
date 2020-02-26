@@ -11,15 +11,23 @@
 	text-align : center;
     }
     div {
-	width : 40%;
+	width : 43%;
 	border : 1px solid yellow;
     }
 
     div:nth-child(2) {
-	width : 25%;
+	width : 28%;
     }
 
     div:nth-child(3) {
-	width : 25%;
+	width : 28%;
+    }
+
+    div:nth-child(6) {
+	width : 28%;
+    }
+
+    div:nth-child(7) {
+	width : 28%;
     }
 }

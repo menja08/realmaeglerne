@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname));
 app.use("/js", express.static("/files/js"));
 app.use("/home", (req, res) => {
-    console.log("Inside home");
     res.redirect("/files/home.html");
 });
 /*app.use("/", (req, res) => {
