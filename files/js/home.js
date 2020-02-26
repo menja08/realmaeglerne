@@ -23,3 +23,23 @@ function showPrisInput() {
     divInput[0].style.display = "flex";
     divInput[1].style.display = "flex";
 }
+
+// navigation scrollEvent
+window.addEventListener("scroll", scroll);
+var navigation = document.getElementsByTagName("nav");
+
+function scroll() {
+    navigation[0].style.border = "3px solid black";
+    
+    if (window.scrollY > 0) {
+	
+	navigation[0].style.width = "20%";
+	
+    } else {
+	navigation[0].style.width = "30%";
+    }
+    
+}
+
+
+

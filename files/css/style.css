@@ -1,7 +1,9 @@
 /**/
 /* logo style*/
 #logo {
-  background: pink; }
+  background: pink;
+  width: 20%;
+  margin-bottom: 5%; }
 
 /* navigation style */
 /* menu scss */
@@ -46,7 +48,9 @@
 nav {
   background: lightgreen;
   width: 30%;
-  float: right;
+  position: fixed;
+  top: 2%;
+  right: 2%;
   display: flex; }
   nav div:nth-child(1):hover, nav div:nth-child(2):hover {
     background: #003761;
@@ -60,7 +64,9 @@ nav {
   background: #003761;
   color: white;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto; }
   #search_home #first, #search_home #second {
     width: 50%; }
   #search_home form {
@@ -193,19 +199,23 @@ nav {
 
 #midSection {
   display: flex;
-  width: 80%;
+  width: 98%;
   margin: auto;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  border: 1px solid green; }
   #midSection div {
-    width: 40%;
-    margin: 1%;
+    width: 48%;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
     border: 1px solid green; }
 
 #lower_midSection_home {
-  width: 80%;
+  width: 98%;
   margin: auto;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  border: 1px solid yellow; }
   #lower_midSection_home h2 {
     width: 100%;
     color: #345670;
@@ -213,6 +223,10 @@ nav {
   #lower_midSection_home div {
     width: 40%;
     border: 1px solid yellow; }
+  #lower_midSection_home div:nth-child(2) {
+    width: 25%; }
+  #lower_midSection_home div:nth-child(3) {
+    width: 25%; }
 
 #boliger {
   width: 99%;

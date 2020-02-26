@@ -1,11 +1,14 @@
 #midSection {
     display : flex;
-    width : 80%;
+    width : 98%;
     margin : auto;
     flex-wrap : wrap;
+    border : 1px solid green;
     div {
-	width : 40%;
-	margin : 1%;
+	width : 48%;
+	margin : auto;// 1%;
+	margin-top : 0;
+	margin-bottom : 0;
 	border : 1px solid green;
     }
 }

@@ -1,8 +1,9 @@
 #lower_midSection_home {
-    width : 80%;
+    width : 98%;
     margin : auto;
     display : flex;
     flex-wrap : wrap;
+    border : 1px solid yellow;
 
     h2 {
 	width : 100%;
@@ -12,5 +13,13 @@
     div {
 	width : 40%;
 	border : 1px solid yellow;
+    }
+
+    div:nth-child(2) {
+	width : 25%;
+    }
+
+    div:nth-child(3) {
+	width : 25%;
     }
 }
