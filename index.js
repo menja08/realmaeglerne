@@ -196,8 +196,16 @@ app.use("/search", (req, res) => {
 	console.log(`${property} : ${query[property]}`);
     }
 
-    // case 1: empty input field
+    // case 1: undefined input field
     if (req.body.search === undefined) {
+	House.find((err, houses) => {
+	    if (err) {
+		console.log("Error " + err);
+	    } else {
+		res.json(houses);
+	    }
+	});
+    } else if (req.body.search === "") { // empty string
 	House.find((err, houses) => {
 	    if (err) {
 		console.log("Error " + err);
