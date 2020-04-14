@@ -186,14 +186,16 @@ app.use("/search", (req, res) => {
     }
 
     // boligtyptype array
-	    if (req.body.propertytype) {
-		console.log("req.body.propertytype = " + req.body.propertytype);
-		query.boligtype = {
-		    $in : req.body.propertytype
-		}
-		console.log("added boligtype to query = " + Object.entries(query.boligtype));
-	    }
+    if (req.body.propertytype) {
+	console.log("req.body.propertytype = " + req.body.propertytype);
+	query.boligtype = {
+	    $in : req.body.propertytype
+	}
+	console.log("added boligtype to query = " + Object.entries(query.boligtype));
+    }
+    
     console.log("current query = " + Object.entries(query));
+    
     // loop through object
     for (const property in query) {
 	//console.log(property + ": " + query[property]);
