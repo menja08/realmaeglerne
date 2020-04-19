@@ -1,6 +1,15 @@
-// defines schema and model slide 512
+// defines schema and model
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/realmaeglerne", {useNewUrlParser:true, useUnifiedTopology: true });
+
+let uriCloud = process.env.MONGODB_URI;
+let uriLocal = "mongodb://localhost:27017/realmaeglerne";
+mongoose.connect(uriCloud || uriLocal, {useNewUrlParser:true, useUnifiedTopology: true }, (err) => {
+    if (err) {
+	console.log("Encountered an error: " + err);
+    } else {
+	console.log("Successfully connected!");
+    }
+});
 
 var Schema = mongoose.Schema;
 
